@@ -1,0 +1,228 @@
+* Start globule rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --three-seven: #777;
+    --global-color: #ececec;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 758px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Extra Large */
+/* @media (min-width: 1441px) {
+    .container {
+        width: 1410px;
+    }
+} */
+/* End globule rules */
+/* start component */
+.big-title {
+    width: fit-content;
+    margin:  0 auto 100px;
+}
+.big-title h2 {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    border: 2px solid black;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s 0.3s;
+}
+.big-title:hover h2 {
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.big-title h2::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    transition: 0.5s;
+    z-index: -1;
+}
+.big-title h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    transition: 0.5s;
+    z-index: -1;
+}
+.big-title:hover h2::before {
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+.big-title:hover h2::after {
+    right: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+}
+.spikie{
+    position: relative;
+}
+.spikie::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 0;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+    z-index: 2;
+    background-size: 30px 30px;
+}
+/* End component */
+.events {
+    padding: 100px 0;
+    position: relative;
+}
+.events .up {
+    position: absolute;
+    top: 120px;
+    right: 0;
+}
+.events .down {
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    z-index: -1;
+}
+@media (max-width: 992px) {
+    .events .down {
+        bottom: 350px;
+    }
+}
+@media (max-width:767px) {
+    .events .up, .events .down {
+        display: none;
+    }
+}
+.events .container .content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+@media (max-width: 992px) {
+    .events .container .content {
+        flex-direction: column;
+    }
+}
+.events .container .content img {
+    max-width: 450px
+}
+@media (max-width: 450px) {
+    .events .container .content img {
+    display: none;
+    }
+}
+.events .container .content .table {
+    flex: 2;
+    text-align: center;
+}
+.events .container .content .table .counter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.events .container .content .table .counter .box {
+    margin-right: 20px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+}
+.events .container .content .table .counter .box .number {
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--main-color);
+    padding: 10px 15px;
+    border-bottom: 1px solid #d4d4d4;
+}
+.events .container .content .table .counter .box .Property {
+    text-align: center;
+    font-size: 13px;
+    padding: 7px;
+    text-transform: capitalize;
+}
+@media (max-width:375px) {
+    .events .container .content .table .counter .box {
+        margin-right: 5px;
+    }
+    .events .container .content .table .counter .box .number {
+        font-size: 25px;
+        padding: 7px 10px;
+    }
+}
+.events .container .content .table .text h2 {
+    margin-bottom: 20px;
+    font-size: 27px;
+    line-height: 2;
+}
+.events .container .content .table .text p {
+    line-height: 2;
+    font-size: 18px;
+    color: var(--three-seven);
+    padding: 10px 50px;
+}
+.events .container .content .table .text span {
+    font-weight: bold;
+    color: #1787e0;
+    font-size: 50px;
+}
+/* End events */
