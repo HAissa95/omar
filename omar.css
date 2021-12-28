@@ -225,4 +225,23 @@ a {
     color: #1787e0;
     font-size: 50px;
 }
+.events .photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+.events .photos img {
+    max-width: 100%;
+    justify-content: center;
+    border: 5px solid #1787e0;
+    border-radius: 10px;
+    opacity: 0;
+    /* animation: opac 3s infinite; */
+}
+
+@keyframes opac {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 /* End events */
