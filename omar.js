@@ -15,7 +15,7 @@ let timeDown = setInterval(() => {
     let secondsTime = Math.floor((dateDiff % (1000 * 60 ))/(1000));
     seconds.innerHTML = secondsTime < 10? `0${secondsTime}` : secondsTime;
 
-    if (dateDiff = 0) {
+    if (dateDiff <= 0) {
         clearInterval(timeDown);
         let goodBay = document.querySelector(".text span");
         goodBay.textContent = "مبرووووووووووك";
